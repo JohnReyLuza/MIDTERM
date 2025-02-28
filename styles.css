@@ -1,122 +1,78 @@
+/* General Styles */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4;
+    text-align: center;
 }
 
-header {
-    background-color: #1E90FF;
-    padding: 10px 20px;
+h2 {
+    font-size: 2rem;
+    margin-top: 20px;
+}
+
+/* Navigation Bar */
+.navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding: 20px;
+    background-color: #007bff; /* Changed to blue */
     color: white;
-    margin: 0;
 }
 
-.navbar {
-    display: flex;
-    align-items: center;
-    width: 100%;
-}
-
-.logo {
-    font-size: 24px;
-    font-weight: bold;
-    margin-right: 20px;
-}
-
-.logo span {
-    font-style: italic;
-}
-
-nav ul {
+.navbar ul {
     list-style: none;
-    padding: 0;
-    margin: 0;
     display: flex;
-    gap: 15px;
+    padding: 0;
 }
 
-nav ul li {
-    display: inline;
+.navbar ul li {
+    margin: 0 15px;
 }
 
-nav ul li a {
+.navbar ul li a {
     color: white;
     text-decoration: none;
     font-weight: bold;
-    padding: 5px 10px;
+    padding: 10px 15px;
+    border-radius: 20px; /* Ensures consistent rounded shape */
+    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out, padding 0.3s ease-in-out, border-radius 0.3s ease-in-out;
 }
 
-nav ul li a:hover {
+.navbar ul li a:hover {
     background-color: white;
-    color: #1E90FF;
-    border-radius: 5px;
+    color: #007bff;
+    border-radius: 20px; /* Maintains shape */
+    padding: 10px 20px;
 }
 
-.hero {
-    text-align: center;
-    position: relative;
-    color: white;
-    padding: 0;
-    margin: 0;
-}
-
+/* Hero Section */
 .hero img {
     width: 100%;
     height: auto;
-    display: block;
 }
 
-.hero h2 {
-    position: absolute;
-    top: 55%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    font-size: 36px;
-    font-weight: bold;
-    padding: 10px 20px;
-    border-radius: 10px;
-    background: none;
-}
-
-.content {
-    background: white;
-    padding: 40px;
-    text-align: center;
-    font-size: 18px;
-    max-width: 800px;
-    margin: 0 auto;
-}
-
-.content h2 {
-    font-size: 28px;
-    margin-bottom: 20px;
-}
-
-.content p {
-    margin: 20px 0;
-    padding: 10px;
-}
-
+/* Cards Container */
 .cards-container {
     display: flex;
-    flex-direction: column;
-    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
     gap: 20px;
+    padding: 20px;
 }
 
+/* Individual Card */
 .card {
     display: flex;
-    max-width: 500px;
+    flex-direction: column;
+    background-color: #f0f4ff;
     border-radius: 10px;
     overflow: hidden;
-    background: #E0E7FF;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
-    position: relative;
+    width: 100%;
+    max-width: 400px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease-in-out;
 }
 
 .card:hover {
@@ -124,64 +80,79 @@ nav ul li a:hover {
 }
 
 .card img {
-    width: 50%;
+    width: 100%;
+    height: 250px;
     object-fit: cover;
 }
 
 .card-text {
     padding: 15px;
-    width: 50%;
-    position: relative;
+    text-align: center;
 }
 
 .card-text h3 {
-    margin: 0;
-    font-size: 20px;
-    font-weight: bold;
+    font-size: 1.3rem;
+    margin-bottom: 10px;
 }
 
 .card-text p {
-    margin: 5px 0 0;
-    font-size: 16px;
-}
-
-.card-date {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    font-size: 14px;
-    font-weight: bold;
+    font-size: 1rem;
     color: #333;
-    background: rgba(255, 255, 255, 0.8);
-    padding: 5px 8px;
-    border-radius: 5px;
 }
 
 .contact-card {
-    background: #7786A5;
+    background-color: #6c7a96; 
     color: white;
-    padding: 20px;
-    border-radius: 10px;
-    text-align: center;
+    padding: 100px;
+    border-radius: 15px;
     max-width: 500px;
     margin: 20px auto;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .contact-card p {
-    font-size: 18px;
+    display: flex;
+    align-items: center;
+    font-size: 1.2rem;
     margin: 10px 0;
+    font-size: larger;
 }
 
 .contact-card .icon {
-    font-size: 24px;
     margin-right: 10px;
+    font-size: 1.5rem;
 }
 
-footer {
-    background-color: #1E90FF;
+
+/* Footer */
+.footer {
+    background-color: #007bff;
     color: white;
     text-align: center;
     padding: 15px;
     margin-top: 20px;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+/* Responsive Layout for Larger Screens */
+@media (min-width: 768px) {
+    .card {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        max-width: 600px;
+    }
+    
+    .card img {
+        width: 50%;
+        height: auto;
+    }
+    
+    .card-text {
+        width: 50%;
+        text-align: left;
+        padding: 20px;
+    }
 }
